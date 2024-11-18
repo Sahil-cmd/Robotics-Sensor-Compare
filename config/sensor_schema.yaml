@@ -1,0 +1,295 @@
+# Sensor Schema (Version 1.0)
+# This schema defines the structure for sensor data YAML files.
+# It ensures consistency and facilitates validation.
+
+schema_version:
+  type: string
+  required: true
+  regex: '^\d+\.\d+$'
+  # Version of the schema used. Format: 'Major.Minor' (e.g., '1.0')
+
+sensor_id:
+  type: string
+  required: true
+  regex: '^[a-zA-Z0-9_-]+$'  # Unique identifier using letters, numbers, underscores, and hyphens
+
+sensor_type:
+  type: string
+  required: true
+  allowed:
+    - RGB Camera
+    - Depth Camera
+    - LiDAR
+    - Infrared Camera
+    - Stereo Camera
+    - Thermal Camera
+    - Time-of-Flight Camera
+    - Ultrasonic Sensor
+    - Radar
+    - Structured Light Camera
+    # Add more sensor types as needed
+
+manufacturer:
+  type: string
+  required: true
+
+model:
+  type: string
+  required: true
+
+resolution:
+  type: dict
+  required: false
+  schema:
+    rgb:
+      type: dict
+      required: false
+      schema:
+        width:
+          type: integer
+          required: true
+        height:
+          type: integer
+          required: true
+    depth:
+      type: dict
+      required: false
+      schema:
+        width:
+          type: integer
+          required: true
+        height:
+          type: integer
+          required: true
+    ir:
+      type: dict
+      required: false
+      schema:
+        width:
+          type: integer
+          required: true
+        height:
+          type: integer
+          required: true
+  # Resolution is structured to facilitate calculation of total pixels and aspect ratios.
+
+field_of_view:
+  type: dict
+  required: false
+  schema:
+    diagonal:
+      type: float
+      required: false
+    horizontal:
+      type: float
+      required: false
+    vertical:
+      type: float
+      required: false
+  # Field of view in degrees, can include diagonal, horizontal, and vertical components.
+
+min_range:
+  type: float
+  required: false
+  # Minimum effective range in meters.
+
+max_range:
+  type: float
+  required: false
+  # Maximum effective range in meters.
+
+frame_rate:
+  type: float
+  required: false
+  # Frame rate value as a float.
+
+frame_rate_unit:
+  type: string
+  required: false
+  allowed:
+    - FPS
+  # Unit for frame rate.
+
+latency:
+  type: float
+  required: false
+  # Latency value as a float.
+
+latency_unit:
+  type: string
+  required: false
+  allowed:
+    - ms
+  # Unit for latency.
+
+environmental_rating:
+  type: string
+  required: false
+  allowed:
+    - IP65
+    - IP66
+    - IP67
+    - IP68
+    - None
+  # Ingress protection rating.
+
+communication_interface:
+  type: string
+  required: false
+  allowed:
+    - USB 2.0
+    - USB 3.0
+    - Gigabit Ethernet
+    - Ethernet
+    - Wi-Fi
+    - CAN
+    - Other
+  # Standardized communication interfaces.
+
+ros_compatibility:
+  type: list
+  required: false
+  schema:
+    type: string
+    allowed:
+      - ROS1
+      - ROS2
+  # List of compatible ROS versions.
+
+driver_link_ros1:
+  type: string
+  required: false
+  regex: '^https?://[^\s]+$'
+  # URL to ROS1 driver repository.
+
+driver_link_ros2:
+  type: string
+  required: false
+  regex: '^https?://[^\s]+$'
+  # URL to ROS2 driver repository.
+
+datasheet_link:
+  type: string
+  required: false
+  regex: '^https?://[^\s]+$'
+  # URL to the datasheet.
+
+github_repo:
+  type: string
+  required: false
+  regex: '^https?://(www\.)?github\.com/[^\s]+$'
+  # URL to the GitHub repository.
+
+key_features:
+  type: list
+  required: false
+  schema:
+    type: string
+  # List of key features or unique selling points.
+
+use_cases:
+  type: list
+  required: false
+  schema:
+    type: string
+  # List of common applications in robotics.
+
+tags:
+  type: list
+  required: false
+  schema:
+    type: string
+  # Metadata tags for filtering (e.g., 'indoor', 'outdoor').
+
+price_range:
+  type: dict
+  required: false
+  schema:
+    min_price:
+      type: float
+      required: false
+    max_price:
+      type: float
+      required: false
+    currency:
+      type: string
+      required: false
+      allowed:
+        - SGD
+        - USD
+        - EUR
+        - GBP
+        - INR
+        # Add other currencies as needed
+  # Numeric price range with currency. If price is unknown, this field can be omitted.
+
+supported_platforms:
+  type: list
+  required: false
+  schema:
+    type: string
+    allowed:
+      - Linux
+      - Windows
+      - macOS
+      - Other
+  # List of supported operating systems.
+
+power_consumption:
+  type: float
+  required: false
+  # Power consumption value as a float.
+
+power_consumption_unit:
+  type: string
+  required: false
+  allowed:
+    - W
+    - mW
+  # Unit for power consumption.
+
+size:
+  type: dict
+  required: false
+  schema:
+    length:
+      type: float
+      required: true
+    width:
+      type: float
+      required: true
+    height:
+      type: float
+      required: true
+    unit:
+      type: string
+      required: true
+      allowed:
+        - mm
+        - cm
+        - m
+  # Dimensions of the sensor.
+
+weight:
+  type: float
+  required: false
+  # Weight value as a float.
+
+weight_unit:
+  type: string
+  required: false
+  allowed:
+    - g
+    - kg
+  # Unit for weight.
+
+sensor_image:
+  type: string
+  required: false
+  regex: '^https?://[^\s]+\.(jpg|jpeg|png|gif)$'
+  # URL to an image of the sensor.
+
+notes:
+  type: string
+  required: false
+  # Additional notes or relevant information.
