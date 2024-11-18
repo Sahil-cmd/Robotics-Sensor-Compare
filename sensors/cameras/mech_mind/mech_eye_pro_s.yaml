@@ -1,0 +1,44 @@
+# MechEye Pro S Sensor Data
+
+sensor_id: "mech_eye_pro_s"
+sensor_type: "Structured Light Camera"
+manufacturer: "Mech-Mind Robotics"
+model: "Mech-Eye PRO S Industrial 3D Camera"
+resolution:
+  rgb: "2048x1536"
+field_of_view:
+  horizontal: 49.0
+  vertical: 37.0
+min_range: 0.3
+max_range: 1.0
+frame_rate: "1.25 FPS"
+latency: "800 ms"
+environmental_rating: "IP65"
+communication_interface: "Gigabit Ethernet"
+ros_compatibility:
+  - "ROS1"
+  - "ROS2"
+driver_link: "https://github.com/MechMindRobotics/mecheye_ros_interface"
+datasheet_link: "https://docs.mech-mind.net/en/eye-3d-camera/latest/hardware/specifications-pro-s-pro-m.html"
+github_repo: "https://github.com/MechMindRobotics/mecheye_ros_interface"
+key_features:
+  - "High-resolution imaging"
+  - "Compact design"
+  - "Industrial-grade durability"
+use_cases:
+  - "Small parts inspection"
+  - "Precision assembly"
+  - "Robotic guidance"
+tags:
+  - "industrial"
+  - "compact"
+  - "robotics"
+  - "3D imaging"
+price_range: "Contact manufacturer"
+supported_platforms:
+  - "Linux"
+  - "Windows"
+power_consumption: "30 W"
+size_weight: "220 mm x 90 mm x 80 mm, 1.4 kg"
+sensor_image: "https://www.mech-mind.com/images/pro-s.png"
+notes: "Ideal for applications requiring high-resolution imaging in a compact form factor."

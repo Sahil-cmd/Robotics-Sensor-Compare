@@ -1,0 +1,44 @@
+# MechEye UHP 140 Sensor Data
+
+sensor_id: "mech_eye_uhp_140"
+sensor_type: "Structured Light Camera"
+manufacturer: "Mech-Mind Robotics"
+model: "Mech-Eye UHP-140 Industrial 3D Camera"
+resolution:
+  rgb: "1920x1200"
+field_of_view:
+  horizontal: 69.0
+  vertical: 53.0
+min_range: 1.2
+max_range: 5.0
+frame_rate: "1.25 FPS"
+latency: "800 ms"
+environmental_rating: "IP65"
+communication_interface: "Gigabit Ethernet"
+ros_compatibility:
+  - "ROS1"
+  - "ROS2"
+driver_link: "https://github.com/MechMindRobotics/mecheye_ros_interface"
+datasheet_link: "https://docs.mech-mind.net/en/eye-3d-camera/latest/hardware/specifications-uhp-140.html"
+github_repo: "https://github.com/MechMindRobotics/mecheye_ros_interface"
+key_features:
+  - "Ultra high power illumination"
+  - "Long-range scanning"
+  - "Robust to ambient light"
+use_cases:
+  - "Outdoor applications"
+  - "Large object scanning"
+  - "Robotic navigation"
+tags:
+  - "industrial"
+  - "long range"
+  - "robotics"
+  - "outdoor"
+price_range: "Contact manufacturer"
+supported_platforms:
+  - "Linux"
+  - "Windows"
+power_consumption: "60 W"
+size_weight: "300 mm x 120 mm x 100 mm, 2.0 kg"
+sensor_image: "https://www.mech-mind.com/images/uhp-140.png"
+notes: "Designed for long-range and outdoor applications with high ambient light."

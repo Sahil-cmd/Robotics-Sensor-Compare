@@ -1,0 +1,44 @@
+# MechEye Nano Sensor Data
+
+sensor_id: "mech_eye_nano"
+sensor_type: "Structured Light Camera"
+manufacturer: "Mech-Mind Robotics"
+model: "Mech-Eye NANO Industrial 3D Camera"
+resolution:
+  rgb: "1280x1024"
+field_of_view:
+  horizontal: 40.0
+  vertical: 30.0
+min_range: 0.2
+max_range: 0.5
+frame_rate: "1.25 FPS"
+latency: "800 ms"
+environmental_rating: "IP65"
+communication_interface: "Gigabit Ethernet"
+ros_compatibility:
+  - "ROS1"
+  - "ROS2"
+driver_link: "https://github.com/MechMindRobotics/mecheye_ros_interface"
+datasheet_link: "https://docs.mech-mind.net/en/eye-3d-camera/latest/hardware/specifications-nano.html"
+github_repo: "https://github.com/MechMindRobotics/mecheye_ros_interface"
+key_features:
+  - "Compact and lightweight"
+  - "High-precision at close range"
+  - "Industrial-grade design"
+use_cases:
+  - "Desktop robotics"
+  - "Small object inspection"
+  - "Precision assembly"
+tags:
+  - "industrial"
+  - "compact"
+  - "close range"
+  - "robotics"
+price_range: "Contact manufacturer"
+supported_platforms:
+  - "Linux"
+  - "Windows"
+power_consumption: "20 W"
+size_weight: "150 mm x 60 mm x 60 mm, 0.8 kg"
+sensor_image: "https://www.mech-mind.com/images/nano.png"
+notes: "Ideal for applications requiring high precision at close distances."

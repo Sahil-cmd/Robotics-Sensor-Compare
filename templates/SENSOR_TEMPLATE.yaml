@@ -1,0 +1,101 @@
+# Sensor Template (Schema Version 1.0)
+# Use this template to add new sensors to the database.
+
+schema_version: "1.0"  # Version of the schema used
+
+sensor_id: "unique_sensor_id"  # Unique identifier (e.g., 'intel_realsense_d435i')
+
+sensor_type: "sensor_type"  # e.g., 'RGB Camera', 'Depth Camera', 'LiDAR'
+
+manufacturer: "manufacturer_name"  # e.g., 'Intel', 'Velodyne'
+
+model: "model_name"  # e.g., 'RealSense D435i', 'VLP-16'
+
+resolution:
+  rgb:
+    width: 1920  # Width in pixels
+    height: 1080  # Height in pixels
+  depth:
+    width: 1280
+    height: 720
+  ir:
+    width: 1024
+    height: 768
+  # Provide resolutions for different modalities if applicable.
+
+field_of_view:
+  diagonal: 90.0  # Diagonal FOV in degrees
+  horizontal: 80.0  # Horizontal FOV in degrees
+  vertical: 60.0  # Vertical FOV in degrees
+
+min_range: 0.1  # Minimum effective range in meters
+
+max_range: 10.0  # Maximum effective range in meters
+
+frame_rate: 30.0  # Frame rate value as a float
+
+frame_rate_unit: "FPS"  # Unit for frame rate
+
+latency: 50.0  # Latency value as a float
+
+latency_unit: "ms"  # Unit for latency
+
+environmental_rating: "IP65"  # e.g., 'IP65', 'IP67', 'None'
+
+communication_interface: "USB 3.0"  # e.g., 'USB 3.0', 'Gigabit Ethernet'
+
+ros_compatibility:
+  - "ROS1"
+  - "ROS2"
+  # List of compatible ROS versions
+
+driver_link_ros1: "URL to ROS1 Driver Repository"  # e.g., 'https://github.com/Example/ros1_driver'
+
+driver_link_ros2: "URL to ROS2 Driver Repository"  # e.g., 'https://github.com/Example/ros2_driver'
+
+datasheet_link: "URL to Datasheet"  # e.g., 'https://www.example.com/datasheet.pdf'
+
+github_repo: "URL to GitHub Repository"  # e.g., 'https://github.com/Example/sensor_repo'
+
+key_features:
+  - "Feature 1"
+  - "Feature 2"
+  # List of key features or unique selling points
+
+use_cases:
+  - "Use Case 1"
+  - "Use Case 2"
+  # List of common applications in robotics
+
+tags:
+  - "Tag1"
+  - "Tag2"
+  # Metadata tags for filtering (e.g., 'indoor', 'outdoor')
+
+price_range:
+  min_price: 199.0  # Minimum price
+  max_price: 249.0  # Maximum price
+  currency: "USD"  # Currency code, e.g., 'USD', 'EUR'
+
+supported_platforms:
+  - "Linux"
+  - "Windows"
+  # List of supported operating systems
+
+power_consumption: 1.5  # Power consumption value
+
+power_consumption_unit: "W"  # Unit for power consumption
+
+size:
+  length: 90.0  # Length in mm
+  width: 25.0   # Width in mm
+  height: 25.0  # Height in mm
+  unit: "mm"    # Unit for size dimensions
+
+weight: 72.0  # Weight value
+
+weight_unit: "g"  # Unit for weight
+
+sensor_image: "URL to Sensor Image"  # e.g., 'https://www.example.com/image.png'
+
+notes: "Additional Notes"  # Any other relevant information
